@@ -1,9 +1,5 @@
 ---
-// Component Imports
-import Button from '../components/Button.astro';
-
-// Full Astro Component Syntax:
-// https://docs.astro.build/core-concepts/astro-components/
+import SocialButton from "../components/SocialButton.astro";
 ---
 
 <html lang="en">
@@ -12,13 +8,20 @@ import Button from '../components/Button.astro';
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro + TailwindCSS</title>
+		<title>Roberto Montufar</title>
 	</head>
-
-	<body>
-		<div class="grid place-items-center h-screen content-center">
-			<Button>Tailwind Button in Astro!</Button>
-			<a href="/markdown-page" class="p-4 underline">Markdown is also supported...</a>
+	<body
+		class="h-screen bg-gradient-to-tr from-[#1A1729] to-[#2A233E] overflow-y-scroll overflow-x-hidden no-scrollbar">
+		<div class="grid bg-[url('./src/assets/noise.svg')] h-full w-full -z-50">
+			<SocialButton
+				iconParameters={{
+					iconUrl: "https://github.com/RobertoMont31",
+					ariaLabel: "Link to Roberto's Github Profile",
+					iconTitle: "Roberto's Github Profile",
+					iconName: "brandico:github",
+					iconTooltipText: "Roberto's Github Profile",
+				}}
+			/>
 		</div>
 	</body>
 </html>

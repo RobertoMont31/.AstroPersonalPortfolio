@@ -11,7 +11,7 @@ const { iconParameters } = Astro.props;
 		target="_blank"
 		title={iconParameters.iconTitle}>
 		<div
-			class="group flex place-content-center w-12 h-10 sm:w-12 sm:h-10 lg:w-16 lg:h-14 p-2 m-1 transition-all duration-200 ease-in-out bg-violet-100 bg-opacity-20 border rounded-lg border-transparent hover:border-violet-100">
+			class="group flex place-content-center w-12 h-10 sm:w-12 sm:h-10 lg:w-16 lg:h-14 p-1.5 m-1 transition-all duration-200 ease-in-out bg-violet-100 bg-opacity-20 border rounded-lg border-transparent hover:border-violet-100">
 			<Icon class="text-orange-500" name={iconParameters.iconSrc} />
 			<div class="absolute place-self-center">
 				<div
@@ -19,7 +19,7 @@ const { iconParameters } = Astro.props;
 				</div>
 			</div>
 			<div class="absolute place-self-center">
-				<div class="invisible text-[6px] max-w-fit whitespace-nowrap bg-violet-100 p-[0.15rem] rounded-sm translate-y-[2.05rem] opacity-0 lg:text-sm lg:p-1.5 lg:rounded-md lg:translate-y-[3.40rem] group-hover:visible group-hover:opacity-100 transition-all duration-500">
+				<div class="invisible font-kodcha font-bold text-[6px] max-w-fit whitespace-nowrap bg-violet-100 p-[0.15rem] rounded-sm translate-y-[2.05rem] opacity-0 lg:text-sm lg:p-1.5 lg:rounded-md lg:translate-y-[3.40rem] group-hover:visible group-hover:opacity-100 transition-all duration-500">
 					{iconParameters.iconTooltipText}
 				</div>
 			</div>

@@ -1,22 +1,18 @@
 ---
 import Logo from "./Logo.astro";
+import NavButton from "./NavButton.astro";
 ---
-<nav class="flex">
-    <Logo iconParameters={{
+<nav class="flex w-full h-20">
+    <Logo class="order-first" iconParameters={{
 					ariaLabel: "Roberto Montufar",
 					iconTitle: "Roberto Montufar",
 					iconSrc: "robot",
 				}}
     />
-	<ul class="flex">
+	<ul class="flex items-end">
 		<li>
 			<a>
-				<span>Logo</span>
-			</a>
-		</li>
-		<li>
-			<a>
-				<span> About me</span>
+				<NavButton buttonText="About Me" />
 			</a>
 		</li>
 		<li>

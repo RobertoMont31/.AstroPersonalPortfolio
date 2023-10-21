@@ -1,29 +1,56 @@
 ---
 import Logo from "./Logo.astro";
 import NavButton from "./NavButton.astro";
+import SocialButton from "./SocialButton.astro";
 ---
-<nav class="flex w-full h-20">
-    <Logo class="order-first" iconParameters={{
-					ariaLabel: "Roberto Montufar",
-					iconTitle: "Roberto Montufar",
-					iconSrc: "robot",
-				}}
-    />
-	<ul class="flex items-end">
+
+<nav class="flex h-16 xl:h-20 mt-8">
+	<Logo
+		class="order-first"
+		iconParameters={{
+			ariaLabel: "Roberto Montufar",
+			iconTitle: "Roberto Montufar",
+			iconSrc: "robot",
+		}}
+	/>
+	<div class="flex-grow"></div>
+	<ul class="flex place-self-end space-x-3 px-3">
 		<li>
-			<a>
+			<a href="">
 				<NavButton buttonText="About Me" />
 			</a>
 		</li>
 		<li>
-			<a>
-				<span> Experience</span>
+			<a href="">
+				<NavButton buttonText="Experience" />
 			</a>
 		</li>
 		<li>
-			<a>
-				<span> Knowledge</span>
+			<a href="">
+				<NavButton buttonText="Knowledge" />
 			</a>
 		</li>
 	</ul>
+    <div class="flex place-self-end space-x-3">
+	<SocialButton
+		iconParameters={{
+			iconUrl: "https://github.com/RobertoMont31",
+			ariaLabel: "Link to Roberto's Github Profile",
+			iconTitle: "Roberto's Github Profile",
+			iconName: "GitHub Icon",
+			iconTooltipText: "Roberto's Github Profile",
+			iconSrc: "github",
+		}}
+	/>
+	<SocialButton
+		iconParameters={{
+			iconUrl: "https://www.linkedin.com/in/roberto-montufarar",
+			ariaLabel: "Link to Roberto's LinkedIn Profile",
+			iconTitle: "Roberto's LinkedIn Profile",
+			iconName: "LinkedIn Icon",
+			iconTooltipText: "Roberto's LinkedIn Profile",
+			iconSrc: "linkedin",
+		}}
+	/>
+    </div>
 </nav>

@@ -3,7 +3,7 @@ import { Icon } from "astro-icon";
 const { iconParameters } = Astro.props;
 ---
 
-<div class="max-w-fit absolute place-self-center">
+<div class="flex">
 	<a
 		href={iconParameters.iconUrl}
 		rel="noopener"
@@ -11,17 +11,15 @@ const { iconParameters } = Astro.props;
 		target="_blank"
 		title={iconParameters.iconTitle}>
 		<div
-			class="group flex place-content-center w-12 h-10 sm:w-12 sm:h-10 lg:w-16 lg:h-14 p-1.5 m-1 transition-all duration-200 ease-in-out bg-violet-100 bg-opacity-20 border rounded-lg border-transparent hover:border-violet-100">
-			<Icon class="text-orange-500" name={iconParameters.iconSrc} />
-			<div class="absolute place-self-center">
-				<div
-					class="visible self-center w-1.5 h-1.5 bg-violet-100 rounded-[1.5px] rotate-45 translate-y-[1.65rem] lg:w-3 lg:h-3 lg:translate-y-[2.40rem] lg:rounded-sm transition-all opacity-0 group-hover:visible group-hover:opacity-100 duration-500 ease-in-out">
-				</div>
+			class="group flex place-content-center w-12 h-10 sm:w-12 sm:h-10 xl:w-16 xl:h-14 p-1.5 transition duration-200 ease-in-out bg-violet-100 bg-opacity-20 border rounded-xl border-transparent hover:border-violet-100">
+			<Icon class="text-violet-100" name={iconParameters.iconSrc} />
+
+			<div
+				class="hidden absolute self-center w-1.5 h-1.5 bg-violet-100 rounded-[1.5px] rotate-45 translate-y-[1.65rem] xl:w-3 xl:h-3 xl:translate-y-[2.40rem] xl:rounded-sm transition-all opacity-0 group-hover:flex group-hover:opacity-100 duration-500 ease-in-out">
 			</div>
-			<div class="absolute place-self-center">
-				<div class="invisible font-kodcha font-bold text-[6px] max-w-fit whitespace-nowrap bg-violet-100 p-[0.15rem] rounded-sm translate-y-[2.05rem] opacity-0 lg:text-sm lg:p-1.5 lg:rounded-md lg:translate-y-[3.40rem] group-hover:visible group-hover:opacity-100 transition-all duration-500">
-					{iconParameters.iconTooltipText}
-				</div>
+			<div
+				class="hidden absolute self-center font-kodcha font-bold text-xs max-w-fit whitespace-nowrap bg-violet-100 p-[0.15rem] rounded-sm translate-y-[2.3rem] xl:text-sm xl:p-1.5 xl:rounded-md xl:translate-y-[3.40rem] group-hover:flex group-hover:opacity-100 transition-all duration-500">
+				{iconParameters.iconTooltipText}
 			</div>
 		</div>
 	</a>

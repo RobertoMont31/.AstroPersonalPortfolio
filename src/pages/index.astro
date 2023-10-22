@@ -1,6 +1,6 @@
 ---
-import SocialButton from "../components/SocialButton.astro";
 import Navbar from "../components/Navbar.astro";
+import MobileMenu from "../components/MobileMenu.astro";
 import "@fontsource/chakra-petch";
 import "@fontsource/kodchasan";
 ---
@@ -17,8 +17,9 @@ import "@fontsource/kodchasan";
 		class="h-screen bg-gradient-to-tr from-[#1A1729] to-[#2A233E] overflow-y-scroll overflow-x-hidden no-scrollbar">
 		<div
 			class="absolute bg-[url('./src/assets/noise.svg')] bg-cover h-full w-full">
-			<main class="mx-[10%]">
+			<main class="lg:mx-[10%]">
 				<header class="flex-grow h-fit">
+					<MobileMenu />
 					<Navbar />
 				</header>
 			</main>

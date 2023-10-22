@@ -1,17 +1,11 @@
 ---
 import { Icon } from "astro-icon";
-const { iconParameters } = Astro.props;
+const { ariaLabel = "", iconTitle = "", iconSrc = "" } = Astro.props;
 ---
 
-<div>
-	<a
-		href="#"
-		aria-label={iconParameters.ariaLabel}
-		target="_self"
-		title={iconParameters.iconTitle}>
-		<div
-			class="group flex place-content-center w-16 xl:w-24 p-1.5 m-1 transition-all duration-200 ease-in-out bg-violet-100 bg-opacity-0 border rounded-lg border-transparent hover:bg-opacity-20 hover:border-violet-100">
-			<Icon class="" name={iconParameters.iconSrc} />
-		</div>
-	</a>
-</div>
+<a href="#" aria-label={ariaLabel} target="_self" title={iconTitle}>
+	<div
+		class="group flex place-content-center w-16 xl:w-24 p-1.5 m-1 transition-all duration-200 ease-in-out bg-violet-100 bg-opacity-0 border rounded-lg border-transparent hover:bg-opacity-20 hover:border-violet-100">
+		<Icon class="w-16 xl:w-24"name={iconSrc} />
+	</div>
+</a>

@@ -1,29 +1,35 @@
 ---
 import Logo from "../components/Logo.astro";
-import NavButton from "./NavButton.astro";
+import MobileMenuButton from "./MobileMenuButton.astro";
 ---
 
 <div>
-	<div class="fixed mt-3 ml-3">
+	<button class="absolute aspect-square top-3 right-5 lg:hidden z-[9999]" aria-expanded="false" aria-controls="nav-menu">
+		<span>Menu</span>
+	</button>
+	<div class="fixed lg:hidden mt-3 ml-3">
 		<Logo
 			ariaLabel="Roberto Montufar"
 			iconTitle="Roberto Montufar"
-			iconSrc="robot"
+			iconSrc="axolotl"
 		/>
 	</div>
-	<div
-		class="flex lg:hidden w-full h-screen fixed left-1/4 place-self-end bg-violet-400">
-		<ul class="flex place-self-end space-x-3 px-3">
+	<div id="nav-menu z-50"
+		class="flex lg:hidden w-full h-screen fixed left-1/4 place-self-end bg-violet-100 bg-opacity-10 backdrop-blur-sm">
+		<ul class="flex flex-col pl-8 pt-[min(20vh,_10rem)] w-full space-y-3">
 			<li>
 				<a href="">
+					<MobileMenuButton buttonText="About Me" />
 				</a>
 			</li>
 			<li>
 				<a href="">
+					<MobileMenuButton buttonText="Experience" />
 				</a>
 			</li>
 			<li>
 				<a href="">
+					<MobileMenuButton buttonText="Knowledge" />
 				</a>
 			</li>
 		</ul>

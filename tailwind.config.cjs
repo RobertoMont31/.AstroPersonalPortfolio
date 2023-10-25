@@ -8,6 +8,9 @@ module.exports = {
 				chakra: ["Chakra Petch", ...defaultTheme.fontFamily.serif],
 				kodcha: ["Kodchasan", ...defaultTheme.fontFamily.serif],
 			},
+			backgroundimage: {
+				'stars-pattern': "url('/img/noise.svg')",
+			},
 			animation: {
 				'spin-slow': 'spin 5s linear infinite',
 				'breathing': 'breathe 5s linear infinite'

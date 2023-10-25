@@ -1,12 +1,13 @@
 ---
 import Logo from "../components/Logo.astro";
 import MobileMenuButton from "./MobileMenuButton.astro";
+import HamButton from "./HamButton.astro";
 ---
 
 <div>
-	<button class="absolute aspect-square top-3 right-5 md:hidden z-[9999]" aria-expanded="false" aria-controls="nav-menu">
-		<span>Menu</span>
-	</button>
+	<div class="absolute top-8 right-5 z-[9999]">
+		<HamButton />
+	</div>
 	<div class="fixed md:hidden mt-3 ml-3">
 		<Logo
 			ariaLabel="Roberto Montufar"
@@ -14,24 +15,42 @@ import MobileMenuButton from "./MobileMenuButton.astro";
 			iconSrc="axolotl"
 		/>
 	</div>
-	<div id="nav-menu z-50"
-		class="flex md:hidden w-full h-screen fixed left-1/4 place-self-end bg-violet-100 bg-opacity-10 backdrop-blur-sm">
+	<div
+		id="nav-menu"
+		class="flex md:hidden w-full h-screen fixed left-1/4 place-self-end bg-violet-100 bg-opacity-10 backdrop-blur-sm z-50 duration-500 origin-right scale-x-0">
 		<ul class="flex flex-col pl-8 pt-[min(20vh,_10rem)] w-full space-y-3">
 			<li>
-				<a href="">
+				<a href="#">
 					<MobileMenuButton buttonText="About Me" />
 				</a>
 			</li>
 			<li>
-				<a href="">
+				<a href="#">
 					<MobileMenuButton buttonText="Experience" />
 				</a>
 			</li>
 			<li>
-				<a href="">
+				<a href="#">
 					<MobileMenuButton buttonText="Knowledge" />
 				</a>
 			</li>
 		</ul>
 	</div>
 </div>
+
+<script>
+	const navMenu = document.getElementById("nav-menu");
+	const hamButton = document.getElementById("hamburger");
+
+	hamButton?.addEventListener("click", () => {
+		const isOpened = hamButton.getAttribute("aria-expanded");
+
+		if (isOpened === "false") {
+			hamButton.setAttribute("aria-expanded", "true");
+			navMenu?.classList.toggle("scale-x-0");
+		} else {
+			hamButton.setAttribute("aria-expanded", "false");
+			navMenu?.classList.toggle("scale-x-0");
+		}
+	});
+</script>

@@ -1,13 +1,9 @@
-# Astro with Tailwind
+# Hellow there!
 
-```sh
-npm create astro@latest -- --template with-tailwindcss
-```
+##I'm Roberto Montufar and this is my portfolio
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/with-tailwindcss)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/with-tailwindcss)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/with-tailwindcss/devcontainer.json)
+As I said, This is my personal portfolio, I created it using Astro, Tailwind CSS, spiced it with some other packages and other cool stuff I found along the way for creating it, most of my inspiration abour design comes from some of the projects [here](https://astro.build/showcase/),  you can check out the deployed site [here](https://robmontufar-dev.netlify.app/)
 
-Astro comes with [Tailwind](https://tailwindcss.com) support out of the box. This example showcases how to style your Astro project with Tailwind.
+This is mostly a compilation of my work experience, the technologies I know/used, a little snapshot about myself, projects and any other thing I think you should know to have a complete picture of me as a developer. Hope you like it. 
 
-For complete setup instructions, please see our [Tailwind Integration Guide](https://docs.astro.build/en/guides/integrations-guide/tailwind).
+[![Netlify Status](https://api.netlify.com/api/v1/badges/e0d802e9-8573-4a8c-bd69-23d38fb7b2ec/deploy-status)](https://app.netlify.com/sites/robmontufar-dev/deploys)

@@ -1,27 +1,26 @@
 ---
-import Navbar from "../components/Navbar.astro";
-import MobileMenu from "../components/MobileMenu.astro";
 import "@fontsource/chakra-petch";
 import "@fontsource/kodchasan";
+import Header from "../layouts/Header.astro";
+import Hero from "../layouts/Hero.astro";
 ---
 
-<html lang="en">
+<html lang="en" class="">
 	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/svg+xml" href="./src/icons/axolotl.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Roberto Montufar</title>
 	</head>
 	<body
-		class="h-screen bg-gradient-to-tr from-[#1A1729] to-[#2A233E] overflow-y-scroll overflow-x-hidden no-scrollbar">
-		<div
-			class="absolute bg-noise bg-cover h-full w-full">
-			<main class="md:mx-[10%]">
-				<header class="flex-grow h-fit">
-					<MobileMenu />
-					<Navbar />
-				</header>
+		class="bg-gradient-to-tr from-[#1A1729] to-[#2A233E]">
+		<div class="bg-noise bg-repeat w-screen h-full place-content-center">
+			<main class="inline-block h-full w-full max-w-[70%] mx-[15%] border border-red-500">
+				<Header />
+				<Hero />
+				<p class="text-chackra text-violet-100">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum qui animi obcaecati at delectus vero hic ipsam, non reprehenderit blanditiis culpa voluptates officiis eos ab distinctio eaque rem! Amet, nisi! Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque eaque exercitationem itaque sequi, delectus natus id eligendi ipsa porro nobis eos obcaecati in voluptatem corrupti. Libero dolores cupiditate aliquam blanditiis. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, est culpa quia repudiandae eaque architecto maiores! Sed dolor delectus voluptatibus, tenetur facere accusamus eveniet blanditiis! Blanditiis odio voluptas fugiat totam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla praesentium eaque inventore voluptates fuga officiis porro nisi numquam deleniti distinctio beatae at qui doloremque, debitis consequuntur! Quisquam consequatur fugit eos.
+				</p>
 			</main>
 		</div>
 	</body>

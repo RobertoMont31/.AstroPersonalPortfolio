@@ -1,0 +1,27 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+//Inerface to pass values from component invocation
+interface Props extends HTMLAttributes<"div"> {
+	isParallax?: true | false;
+	twContainerClasses?: string;
+	twAccentClasses?: string;
+	text?: string;
+	accent?: string;
+}
+
+//Default values for component
+const {
+	isParallax = false,
+	twContainerClasses = "font-chakra text-violet-100 font-thin text-5xl",
+	twAccentClasses = "text-6xl font-extrabold text-orange-400",
+	text = "Hi, I'm, ",
+	accent = "Roberto",
+	...rest
+} = Astro.props;
+---
+
+<div id="parallax-container" class={`${twContainerClasses}`}>
+	{text}
+	<span class={`${twAccentClasses}`}>{accent}</span>
+</div>

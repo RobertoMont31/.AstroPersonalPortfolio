@@ -5,10 +5,10 @@ import HamButton from "./HamButton.astro";
 ---
 
 <div>
-	<div class="absolute top-8 right-5 z-[9999]">
+	<div class="fixed top-4 right-6 z-[9999]">
 		<HamButton />
 	</div>
-	<div class="fixed md:hidden mt-3 ml-3">
+	<div class="fixed md:hidden top-2 left-2 z-[9999]">
 		<Logo
 			ariaLabel="Roberto Montufar"
 			iconTitle="Roberto Montufar"
@@ -17,7 +17,7 @@ import HamButton from "./HamButton.astro";
 	</div>
 	<div
 		id="nav-menu"
-		class="flex md:hidden w-full h-screen fixed left-1/4 place-self-end bg-violet-100 bg-opacity-10 backdrop-blur-sm z-50 duration-500 origin-right scale-x-0">
+		class="flex md:hidden w-full h-screen fixed left-1/4 place-self-end bg-violet-100 bg-opacity-10 backdrop-blur-sm z-[9998] duration-500 origin-right scale-x-0">
 		<ul class="flex flex-col pt-[min(20vh,_10rem)] w-full space-y-3">
 			<li  class="hover:[box-shadow:inset_0px_0px_10px_5px_#1A1729] transition-all duration-1000">
 				<a href="#">

@@ -4,11 +4,11 @@ import NavButton from "./NavButton.astro";
 import SocialButton from "./SocialButton.astro";
 ---
 
-<nav class="hidden md:flex h-16 xl:h-20 mt-8">
+<nav class="fixed hidden md:flex h-fit w-[70%] px-1">
 	<Logo
-			ariaLabel ="Roberto Montufar"
-			iconTitle = "Roberto Montufar"
-			iconSrc = "axolotl"
+		ariaLabel="Roberto Montufar"
+		iconTitle="Roberto Montufar"
+		iconSrc="axolotl"
 	/>
 	<div class="flex-grow"></div>
 	<ul class="flex place-self-end space-x-3 px-3">
@@ -28,22 +28,22 @@ import SocialButton from "./SocialButton.astro";
 			</a>
 		</li>
 	</ul>
-    <div class="flex place-self-end space-x-3">
-	<SocialButton
-			iconUrl = "https://github.com/RobertoMont31"
-			ariaLabel = "Link to Roberto's Github Profile"
-			iconTitle = "Roberto's Github Profile"
-			iconName = "GitHub Icon"
-			iconTooltipText = "Roberto's Github Profile"
-			iconSrc = "github"
+	<div class="flex place-self-end space-x-3">
+		<SocialButton
+			iconUrl="https://github.com/RobertoMont31"
+			ariaLabel="Link to Roberto's Github Profile"
+			iconTitle="Roberto's Github Profile"
+			iconName="GitHub Icon"
+			iconTooltipText="Roberto's Github Profile"
+			iconSrc="github"
 		/>
-	<SocialButton
-			iconUrl = "https://www.linkedin.com/in/roberto-montufarar"
-			ariaLabel = "Link to Roberto's LinkedIn Profile"
-			iconTitle = "Roberto's LinkedIn Profile"
-			iconName = "LinkedIn Icon"
-			iconTooltipText = "Roberto's LinkedIn Profile"
-			iconSrc = "linkedin"
+		<SocialButton
+			iconUrl="https://www.linkedin.com/in/roberto-montufarar"
+			ariaLabel="Link to Roberto's LinkedIn Profile"
+			iconTitle="Roberto's LinkedIn Profile"
+			iconName="LinkedIn Icon"
+			iconTooltipText="Roberto's LinkedIn Profile"
+			iconSrc="linkedin"
 		/>
-    </div>
+	</div>
 </nav>

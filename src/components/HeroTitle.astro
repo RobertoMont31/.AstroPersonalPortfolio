@@ -13,15 +13,15 @@ interface Props extends HTMLAttributes<"div"> {
 //Default values for component
 const {
 	isParallax = false,
-	twContainerClasses = "font-chakra text-violet-100 font-thin text-5xl",
-	twAccentClasses = "text-6xl font-extrabold text-orange-400",
-	text = "Hi, I'm, ",
-	accent = "Roberto",
+	twContainerClasses = "",
+	twAccentClasses = "",
+	text = "",
+	accent = "",
 	...rest
 } = Astro.props;
 ---
 
-<div id="parallax-container" class={`${twContainerClasses}`}>
+<div id="parallax-container" class={`${twContainerClasses}`} {...rest}>
 	{text}
 	<span class={`${twAccentClasses}`}>{accent}</span>
 </div>

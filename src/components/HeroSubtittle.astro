@@ -3,32 +3,24 @@ import type { HTMLAttributes } from "astro/types";
 
 //Inerface to pass values from component invocation
 interface Props extends HTMLAttributes<"div"> {
-	twImageClasses?: string;
 	isParallax?: true | false;
 	twContainerClasses?: string;
-	src?: string;
-	alt?: string;
+	twAccentClasses?: string;
+	text?: any;
+	id?: string;
 }
 
 //Default values for component
 const {
-	twImageClasses = "",
 	isParallax = false,
 	twContainerClasses = "",
-	alt = "This is an 3D avatar of Roberto",
-	src = "./public/roberto-avatar-nobg.png",
+	twAccentClasses = "",
+	text = "Hi, I'm, Roberto",
+	id = "",
 	...rest
 } = Astro.props;
 ---
 
-<div
-	id="parallax-container"
-	class={`${twContainerClasses}`}
-	{...rest}>
-	<img
-		src={src}
-		alt={alt}
-        loading={"eager"}
-		class={`${twImageClasses}`}
-	/>
+<div id={`${id}`} class={`${twContainerClasses}`} {...rest}>
+	{text.map((i) => <p id="stagger-container" class={`${twAccentClasses}`}>{i}</p>)}
 </div>

@@ -75,27 +75,31 @@ import HeroSubtittle from "../components/HeroSubtittle.astro";
 	});
 
 	//Tilt Avatar effect
-	const maxRot = 20;
-	const setRotY = gsap.quickSetter("#parallax-container", "rotationY", "deg");
-	const setRotX = gsap.quickSetter("#parallax-container", "rotationX", "deg");
-
-	gsap.set("#parallax-container", { transformOrigin: "center center" });
-
-	let getPercentX: any;
-	let getPercentY: any;
-
-	function resize() {
-		getPercentY = gsap.utils.mapRange(0, innerWidth, 1, -1);
-		getPercentX = gsap.utils.mapRange(0, innerHeight, 1, -1);
-	}
-
-	window.addEventListener("mousemove", (e) => {
-		const percentX = getPercentX(e.pageX);
-		const percentY = getPercentY(e.pageY);
-		setRotX(percentY * maxRot);
-		setRotY(percentX * maxRot);
+	gsap.set("#tiltElement", {
+		transformOrigin: "center center",
+		ease: "power4.out",
 	});
 
-	window.addEventListener("resize", resize);
-	resize();
+	const tiltElements = document.querySelectorAll('[id="tiltElement"]');
+
+	tiltElements.forEach((element) => {
+		element.addEventListener("mousemove", mouseMoved);
+	});
+
+	function mouseMoved(ev) {
+		const setRotX = gsap.quickSetter("#tiltElement", "rotationX", "deg");
+		const setRotY = gsap.quickSetter("#tiltElement", "rotationY", "deg");
+
+		const target = ev.target;
+		const rect = target.getBoundingClientRect();
+
+		const deltaX = ev.clientX - rect.left;
+		const deltaY = ev.clientY - rect.top;
+
+		const xPct = deltaX / rect.width - 0.5;
+		const yPct = deltaY / rect.height - 0.5;
+
+		setRotX(-yPct * 50);
+		setRotY(xPct * 50);
+	}
 </script>

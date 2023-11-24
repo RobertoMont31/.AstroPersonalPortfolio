@@ -16,19 +16,11 @@ const {
 	isParallax = false,
 	twContainerClasses = "",
 	alt = "This is an 3D avatar of Roberto",
-	src = "roberto-avatar-nobg.png",
+	src = "roberto-avatar-nobg.webp",
 	...rest
 } = Astro.props;
 ---
 
-<div
-	id="parallax-container"
-	class={`${twContainerClasses}`}
-	{...rest}>
-	<img
-		src={src}
-		alt={alt}
-        loading={"eager"}
-		class={`${twImageClasses}`}
-	/>
+<div id="parallax-container" class={`${twContainerClasses}`} {...rest}>
+	<img src={src} alt={alt} loading={"eager"} class={`${twImageClasses}`} />
 </div>

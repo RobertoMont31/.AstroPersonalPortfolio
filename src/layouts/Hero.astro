@@ -21,7 +21,14 @@ import HeroSubtittle from "../components/HeroSubtittle.astro";
 		<HeroSubtittle
 			twContainerClasses="inline-block w-full font-chakra tracking-wide whitespace-nowrap text-violet-100 mt-5 font-thin md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-7xl"
 			twAccentClasses="absolute"
-			text={["<FrontEnd />", "<Developer />", "<RPA Dev />", "<Jack-of-all-trades />", "<UI/UX Fanatic />", "<Full Stack />"]}
+			text={[
+				"<FrontEnd />",
+				"<Developer />",
+				"<RPA Dev />",
+				"<Jack-of-all-trades />",
+				"<UI/UX Fanatic />",
+				"<Full Stack />",
+			]}
 			id="reveal-text"
 		/>
 	</div>
@@ -31,30 +38,64 @@ import HeroSubtittle from "../components/HeroSubtittle.astro";
 	import SplitType from "split-type"; //Splits text into individual divs
 	import { gsap } from "gsap"; //animations platform
 
+	//Reveal text animation
 	// Create array of subtitles
 	const subtitles = gsap.utils.toArray("#stagger-container");
 	//Create timeline for all subtitles this repeats infinitely
-	const subtitleTl = gsap.timeline({repeat: -1}); 
+	const subtitleTl = gsap.timeline({ repeat: -1 });
 	//loop subtitles
-	subtitles.forEach(subtitle => {
+	subtitles.forEach((subtitle) => {
 		//split subtitle into individual divs
 		const splitSubTitle = new SplitType(subtitle);
-		//Create timeline for all characters in the subtitle 
-		const charsTl = gsap.timeline({repeat:1, yoyo: true, repeatDelay:0.5});
+		//Create timeline for all characters in the subtitle
+		const charsTl = gsap.timeline({ repeat: 1, yoyo: true, repeatDelay: 0.5 });
 		charsTl
-				//animation for pulling letters up
-				.from(splitSubTitle.chars, {
-					opacity: 0, 
-					yPercent: 100, 
-					stagger: 0.1
-				}, "<")
-				//animation for pulling letters down
-				.to(splitSubTitle.chars, {
-					opacity:100, 
-					yPercent: 0, 
-					stagger:0.1
-				}, "<1")
-		//add another timeline for next subtitle. 
+			//animation for pulling letters up
+			.from(
+				splitSubTitle.chars,
+				{
+					opacity: 0,
+					yPercent: 100,
+					stagger: 0.1,
+				},
+				"<",
+			)
+			//animation for pulling letters down
+			.to(
+				splitSubTitle.chars,
+				{
+					opacity: 100,
+					yPercent: 0,
+					stagger: 0.1,
+				},
+				"<1",
+			);
+		//add another timeline for next subtitle.
 		subtitleTl.add(charsTl);
 	});
+
+	//Tilt Avatar effect
+	const maxRot = 20;
+	const setRotY = gsap.quickSetter("#parallax-container", "rotationY", "deg");
+	const setRotX = gsap.quickSetter("#parallax-container", "rotationX", "deg");
+
+	gsap.set("#parallax-container", { transformOrigin: "center center" });
+
+	let getPercentX: any;
+	let getPercentY: any;
+
+	function resize() {
+		getPercentY = gsap.utils.mapRange(0, innerWidth, 1, -1);
+		getPercentX = gsap.utils.mapRange(0, innerHeight, 1, -1);
+	}
+
+	window.addEventListener("mousemove", (e) => {
+		const percentX = getPercentX(e.pageX);
+		const percentY = getPercentY(e.pageY);
+		setRotX(percentY * maxRot);
+		setRotY(percentX * maxRot);
+	});
+
+	window.addEventListener("resize", resize);
+	resize();
 </script>
